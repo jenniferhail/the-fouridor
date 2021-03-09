@@ -1,0 +1,162 @@
+.layout.slider {
+	width: 100%;
+	.slider-wrapper {
+		margin-bottom: $base-spacing;
+		padding-bottom: $base-spacing;
+		@media screen and ($breakpoint) {
+			padding-right: $base-spacing;
+		}
+	}
+	.glide-wrapper {
+		display: block;
+		// max-width: 600px;
+	}
+    .glide {
+		flex: 1 1 auto;
+		display: block;
+		position: relative;
+    }
+	.glide__slides,
+	.glide__track {
+		overflow: hidden;
+	}
+	.glide__track {
+		transition: height 800ms $base-timing;
+	}
+	.glide__arrows {
+		position: absolute;
+		top: 50%;
+		width: auto;
+		height: auto;
+		transform: translateY(-50%);
+		display: flex;
+		justify-content: space-between;
+		button {
+			padding: 18px;
+			font-size: 1em;
+			border: 0;
+			background-color: rgba(0,0,0,0.6);
+			color: $white;
+			&:hover {
+				background-color: $white;
+				color: rgba(0,0,0,0.6);
+			}
+		}
+		&.arrows-left {
+			left: 0;
+		}
+		&.arrows-right {
+			right: 0;
+		}
+	}
+	.glide__bullets {
+		top: auto;
+		bottom: auto;
+		display: flex;
+		margin-top: 1.5em;
+		.glide__bullet {
+			position: relative;
+			width: 30px;
+			height: 20px;
+			padding: 5px;
+			border: 0;
+			border-radius: 0;
+			line-height: 0;
+			font-size: 0;
+			box-shadow: none;
+			color: $clear;
+			background-color: $clear;
+			&:before {
+				position: absolute;
+				top: 10px;
+				left: 0;
+				content: "\2022";
+				width: 30px;
+				height: 2px;
+				font-size: 6px;
+				line-height: 20px;
+				text-align: center;
+				color: $clear;
+				-webkit-font-smoothing: antialiased;
+				background-color: rgba(0,0,0,0.2);
+				transition: background-color $base-duration $base-timing;
+			}
+			&.glide__bullet--active {
+				&:before {
+					background-color: rgba(0,0,0,0.6);
+				}
+			}
+			&:hover {
+				&:before {
+					background-color: rgba(0,0,0,0.4);
+				}
+			}
+		}
+	}
+	.video-slide-inner {
+	    width: 100%;
+	    height: 0;
+	    position: relative;
+	    padding-bottom: 70%;
+	}
+	.video-slide-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 0 38%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0;
+    }
+    .play-btn-outer {
+        position: relative;
+        height: 0;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+    .play-btn-inner {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+		background-color: rgba(0,0,0,0.6);
+        border: 3px solid $white;
+        border-radius: 50%;
+        transition: all 200ms $base-timing;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 3px solid rgba(255, 255, 255, 0);
+            .play-btn svg {
+                fill: black;
+            }
+        }
+    }
+    .play-btn {
+		width: 35%;
+		height: 35%;
+        position: relative;
+        left: 2.5%;
+		svg {
+			width: 100%;
+			height: 100%;
+			fill: $white;
+			transition: all 200ms $base-timing;
+		}
+    }
+	// Captions
+	.slide-content {
+		padding-top: 15px;
+		font-style: italic;
+		font-size: 14px;
+	}
+	.glide__slide {
+		max-width: 800px;
+	}
+}

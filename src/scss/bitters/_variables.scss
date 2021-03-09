@@ -1,0 +1,88 @@
+// Base Settings
+// .layout {
+//     margin-bottom: 80px;
+// }
+
+.wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
+
+// Breakpoints
+$laptop-lg: "min-width: 1260px";
+$laptop-sm: "min-width: 1100px";
+$tablet-lg: "min-width: 960px";
+$tablet: "min-width: 768px";
+$mobile-lg: "min-width: 640px";
+$mobile-sm: "min-width: 480px";
+
+$breakpoint: $tablet-lg;
+
+// Fonts: Gotham Bold, Mr Eaves XL San OT Reg
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700');
+@import url('https://use.typekit.net/str1qqk.css');
+$gotham: 'Montserrat', sans-serif;
+$mreaves: mr-eaves-xl-sans, sans-serif;
+$primary: $mreaves;
+$secondary: $gotham;
+
+$fa-font-path: '../fonts';
+$fa-filename: 'fontawesome-pro';
+
+$base-font-family: $mreaves;
+$heading-font-family: $mreaves;
+
+// Line height
+$base-line-height: 1.15;
+$heading-line-height: 1.2;
+
+// Font Weight
+$base-font-weight: 300;
+$heading-font-weight: $base-font-weight;
+
+// Other Sizes
+$base-border-radius: 0;
+// $base-spacing: 1.5em;
+$base-spacing: 55px; // Use this spacing size for larger screens, $laptop-lg
+// $base-spacing: 45px;
+$small-spacing: 15px;
+$base-z-index: 0;
+
+// Sidebar menu
+$sidebar-height: 378px;
+$sidebar-top: calc( 50% - #{$sidebar-height} / 2 );
+$sidebar-width: 310px;
+$sidebar-mobile-width: 255px;
+$sidebar-mobile-height: 410px;
+
+// Colors
+$white: rgb(237,234,228);
+$grey: #6c6c6c;
+$clear: rgba(0,0,0,0);
+$blue: #1565c0;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $grey;
+
+// Border
+$base-border-color: $grey;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$viewport-background-color: rgba(237,234,228,0.97);
+
+// Focus
+$focus-outline-color: transparentize($action-color, 0.4);
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+// Animations
+$base-duration: 300ms;
+$base-timing: ease-in-out;
+$base-opacity: 0.7;

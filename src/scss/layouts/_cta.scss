@@ -1,0 +1,19 @@
+.layout.cta {
+    .wrapper {
+        display: flex;
+    }
+    .image,
+    .content {
+        width: 50%;
+    }
+    .image {
+        position: relative;
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 320px;
+    }
+}

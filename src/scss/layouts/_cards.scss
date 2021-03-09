@@ -1,0 +1,191 @@
+.layout.cards {
+	width: 100%;
+	.card-list {
+		position: relative;
+		width: 100%;
+		@media screen and ($laptop-sm) {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
+	.card {
+		.card-wrapper {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			margin-bottom: $base-spacing;
+			padding-bottom: $base-spacing;
+		}
+		// Contact cards
+		&.contact {
+			@media screen and ($tablet) {
+				flex: 1 0 50%;
+				display: flex;
+				flex-direction: column;
+			}
+			.card-wrapper {
+				align-items: stretch;
+				// height: 100%;
+				@media screen and ($tablet) {
+					padding-right: $base-spacing;
+				}
+			}
+		}
+		// Normal cards
+		&:not(.contact) {
+			text-align: center;
+			@media screen and ($laptop-sm) {
+				flex: 1 0 50%;
+				display: flex;
+				flex-direction: column;
+				&:only-child {
+					flex-basis: 100%;
+				}
+			}
+			@media screen and ($breakpoint) {
+				text-align: left;
+			}
+			.card-wrapper {
+				position: relative;
+				@media screen and ($breakpoint) {
+					padding-right: $base-spacing;
+				}
+				@media screen and ($laptop-sm) {
+					height: 100%;
+				}
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 50%;
+					bottom: 0;
+					height: 1px;
+					width: 90px;
+					background-color: $grey;
+					transform: translateX(-50%);
+					@media screen and ($breakpoint) {
+						left: 0;
+						transform: none;
+					}
+				}
+			}
+			// Screens < 1100px
+			// No line on last card
+			&:last-child .card-wrapper:after {
+				content: none;
+			}
+			// Screens > 1100px
+			// No line on last two cards
+			@media screen and ($laptop-sm) {
+				&:nth-last-child(-n+2) .card-wrapper:after {
+					content: none;
+				}
+			}
+			h2 {
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+				@media screen and ($breakpoint) {
+					margin-left: 0;
+					margin-right: 0;
+					text-align: left;
+				}
+			}
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.card-img {
+		display: block;
+		+ h2 {
+			padding-top: $small-spacing * 4;
+		}
+	}
+	.card-icon {
+		max-width: 75px;
+		height: 75px;
+		margin: 0 auto;
+		@media screen and ($breakpoint) {
+			margin: 0;
+		}
+		+ h2 {
+			padding-top: $small-spacing * 2;
+		}
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+			fill: $grey;
+		}
+	}
+}
+
+.left {
+	.layout.cards {
+		.card-list {
+			display: block;
+		}
+	}
+}
+
+.layout.contact-cards {
+	.card-list {
+		@media screen and ($tablet) {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
+	.contact-website {
+		align-self: flex-start;
+		display: inline-block;
+		margin-bottom: 15px;
+		color: $action-color;
+		border-bottom: 1px solid;
+		transition: color $base-duration $base-timing;
+		&:hover {
+			color: $base-font-color;
+		}
+	}
+	.card-img {
+		margin-bottom: 30px;
+		align-self: flex-start;
+	}
+	.links {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		flex: 1 0 0%;
+		justify-content: flex-end;
+		.links-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: space-between;
+			@media screen and (max-width: 767px) {
+				flex-direction: row;
+				flex-wrap: nowrap;
+				align-items: flex-end;
+				justify-content: space-between;
+				width: 75%;
+				max-width: 300px;
+				.contact-website {
+					margin-bottom: 0;
+				}
+			}
+			@media screen and ($laptop-lg) {
+				flex-direction: row;
+				flex-wrap: nowrap;
+				align-items: flex-end;
+				justify-content: space-between;
+				width: 75%;
+				max-width: 300px;
+				.contact-website {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

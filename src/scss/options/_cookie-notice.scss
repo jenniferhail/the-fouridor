@@ -1,0 +1,51 @@
+.option.cookie-notice {
+    display: flex;
+    align-items: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	margin-top: 15px;
+	padding: 10px 0;
+	width: 100%;
+	height: auto;
+    color: $white;
+    transform: translate3d(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.55);
+    transition: all 500ms $base-timing;
+    z-index: 9999;
+	&.move {
+        transform: translate3d(100%, 0, 0);
+    }
+	@media screen and ($breakpoint) {
+		position: absolute;
+		top: calc(50% + 378px / 2);
+		right: 0;
+		bottom: auto;
+		left: auto;
+		width: 310px;
+		padding: 0;
+	}
+    &.hide {
+        display: none;
+    }
+	.wrapper {
+		padding-right: 25px;
+	    font-size: 14px;
+	}
+    .close {
+		padding: 15px 18px;
+		margin: 0;
+		background-color: transparent;
+		border: 0;
+		transition: opacity $base-duration $base-timing;
+		&:hover {
+			cursor: pointer;
+			opacity: 0.8;
+		}
+		i {
+			color: $white;
+		}
+    }
+}

@@ -1,0 +1,26 @@
+.layout.accordion {
+    .acc-item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+        border: 1px solid #000;
+        .title {
+            display: block;
+            width: 100%;
+            padding: 20px 0 20px 20px;
+            margin: 0;
+            cursor: pointer;
+            transition: all $base-duration $base-timing;
+            &:hover {
+                background-color: #ebee27;
+            }
+        }
+    }
+    .acc-content {
+        display: none;
+    }
+    .acc-content-wrapper {
+        padding: 20px;
+    }
+}

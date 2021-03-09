@@ -1,0 +1,22 @@
+.layout.basic-content {
+    ul, ol {
+        padding-left: 20px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+    ul {
+        list-style: disc;
+    }
+    ol {
+        list-style: decimal;
+    }
+	.card {
+		width: 100%;
+		margin-bottom: 55px;
+		.card-wrapper {
+			@media screen and ($tablet-lg) {
+			    padding-right: 55px;
+			}
+		}
+	}
+}

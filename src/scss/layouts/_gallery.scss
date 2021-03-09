@@ -1,0 +1,9 @@
+.layout.gallery {
+    .gallery-list {
+        display: flex;
+    }
+    .gallery-item {
+        width: 100%;
+        max-width: 320px;
+    }
+}

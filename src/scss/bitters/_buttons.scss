@@ -1,0 +1,67 @@
+$_button-background-color: $action-color;
+$_button-background-color-hover: $grey;
+
+#{$all-buttons} {
+	appearance: none;
+	background-color: $clear;
+	border: 1px solid $grey;
+	border-radius: $base-border-radius;
+	color: $grey;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $base-font-family;
+	font-size: 0.85em;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0.1em;
+	padding: $small-spacing $base-spacing;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color $base-duration $base-timing, color $base-duration $base-timing;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+
+	&:hover {
+		background-color: $_button-background-color-hover;
+		color: $white;
+	}
+
+	&:focus {
+		outline: $focus-outline;
+		outline-offset: $focus-outline-offset;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+		&:hover {
+			background-color: $_button-background-color;
+		}
+	}
+}
+
+.buttons {
+	text-align: center;
+	@media screen and ($breakpoint) {
+		text-align: left;
+	}
+	.btn {
+		display: inline-block;
+		padding: 10px 40px;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+		border: 1px solid $grey;
+		font-size: 0.85em;
+		letter-spacing: 0.1em;
+		color: $grey;
+		transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+		&:hover {
+			background-color: $grey;
+			color: $white;
+		}
+	}
+}
